@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人简历</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        table td {
+            border: 1px solid black;
+            padding: 15px;
+            line-height: 1.5;
+        }
+
+        .outer-table {
+            border: 3px solid blue;
+        }
+
+        .fixed-width {
+            width: 15%;
+        }
+
+        .photo-cell {
+            width: 15%;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        table table {
+            margin: 10px;
+            width: calc(100% - 20px);
+        }
+
+        .left {
+            width: 10%;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 0;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        #photo-preview {
+            max-width: 180px;
+            max-height: 200px;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <caption>个人简历</caption>
+                    <tr>
+                        <td class="left"><i class="fa-solid fa-user"></i> 姓名</td>
+                        <td><input type="text" value="许源赫"></td>
+                        <td><i class="fa-solid fa-venus-mars"></i> 性别</td>
+                        <td><select>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select></td>
+                        <td><i class="fa-solid fa-calendar-days"></i> 年龄</td>
+                        <td><input type="number" value="20"></td>
+                        <td rowspan="3">
+                            <input type="file" id="photo-input" accept="image/*" onchange="previewPhoto(event)">
+                            <img id="photo-preview" src="zhaopian.jpg" alt="个人照片"> <!-- 设置默认图片链接 -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left"><i class="fa-solid fa-location-dot"></i> 籍贯</td>
+                        <td><input type="text" value="吉林省白城市"></td>
+                        <td><i class="fa-solid fa-phone"></i> 联系电话</td>
+                        <td><input type="text" value="13364363009"></td>
+                        <td><i class="fa-solid fa-envelope"></i> 电子邮箱</td>
+                        <td><input type="email" value="126****@qq.com"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><i class="fa-solid fa-graduation-cap"></i> 学历</td>
+                        <td><select>
+                                <option value="本科">本科</option>
+                                <option value="专科">专科</option>
+                                <option value="硕士">硕士</option>
+                                <option value="博士">博士</option>
+                            </select></td>
+                        <td><i class="fa-solid fa-heart-pulse"></i> 健康状况</td>
+                        <td><select>
+                                <option value="正常">正常</option>
+                                <option value="良好">良好</option>
+                                <option value="一般">一般</option>
+                            </select></td>
+                        <td><i class="fa-solid fa-ring"></i> 婚姻状况</td>
+                        <td><select>
+                                <option value="未婚">未婚</option>
+                                <option value="已婚">已婚</option>
+                                <option value="离异">离异</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="left"><i class="fa-solid fa-briefcase"></i> 求职意向</td>
+                        <td><input type="text" value=""></td>
+                        <td><i class="fa-solid fa-code"></i> 专业</td>
+                        <td colspan="2"><input type="text" value="软件工程"></td>
+                        <td><i class="fa-solid fa-school"></i> 毕业院校</td>
+                        <td><input type="text" value="鲁东大学"></td>
+                    </tr>
+                    <tr>
+                        <td class="left"> 技能证书</td>
+                        <td colspan="6"><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="left"> 个人特长与爱好</td>
+                        <td colspan="6"><input type="text" value=""></td>
+                    </tr>
+                    <tr>
+                        <td class="left"> 项目经历</td>
+                        <td colspan="6"><textarea rows="3" cols="50">无</textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="left"> 自我评价</td>
+                        <td colspan="6">
+                            <textarea rows="10" cols="50">
+作为一名积极进取的大学生，在学业上，我始终以热忱与专注深耕专业领域。课堂内，我全神贯注，不放过老师讲解的任何细节，积极参与互动，思维紧跟教学节奏。课后，对待作业严谨认真，主动拓展学习。生活里，我深知健康的重要性，保持规律作息，早睡早起，为日常学习生活储备能量。每周坚持运动，或是在操场慢跑，或是在健身房锻炼，运动不仅让我拥有强健体魄，更让我时刻精力充沛，从容应对生活挑战。但我也清楚自身短板，在沟通表达方面存在提升空间。为此，我制定了详细计划，计划多参与演讲活动，从克服紧张开始，锻炼流畅表达观点的能力；积极投身小组讨论，在思维碰撞中学会清晰阐述想法，虚心汲取他人建议。此外，我主动加入实验室，在导师指导下与团队协作，参与科研项目。从基础数据收集到复杂实验分析，我都全力以赴，期望在实践中积累经验，全方位提升自己，不断向优秀靠近 。
+                        </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            <fieldset>
+                                <legend>额外信息</legend>
+                                <input type="text" placeholder="请输入其他信息">
+                            </fieldset>
+                        </td>
+                        <td colspan="6">
+                            <fieldset>
+                                <legend>更多信息</legend>
+                                <textarea rows="3" cols="50" placeholder="请输入更多信息"></textarea>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function previewPhoto(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('photo-preview');
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

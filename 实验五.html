@@ -128,11 +128,18 @@
             max-width: 200px;
             max-height: 220px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-top: 15px;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        #photo-preview:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
         }
 
         #photo-input {
-            padding: 4px 5px;
+            padding: 8px 15px;
             border: none;
             border-radius: 8px;
             background: #007BFF;
@@ -140,11 +147,20 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         #photo-input:hover {
             background: #0056b3;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #photo-input:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
        .long-text.info-item {
@@ -233,8 +249,8 @@
                 </div>
             </div>
             <div class="photo-section">
-                <img id="photo-preview" src="zhaopian.jpg" alt="个人照片">
                 <input type="file" id="photo-input" accept="image/*" onchange="previewPhoto(event)">
+                <img id="photo-preview" src="zhaopian.jpg" alt="个人照片">
             </div>
         </div>
         <div class="section">

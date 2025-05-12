@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+       .resume-container {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+       .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+       .section:last-child {
+            border-bottom: none;
+        }
+
+       .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+       .section-title:hover {
+            transform: translateX(10px);
+            color: #007BFF;
+        }
+
+       .section-title i {
+            margin-right: 10px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+       .section-title:hover i {
+            transform: rotate(30deg);
+            color: #007BFF;
+        }
+
+       .info-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+       .info-item {
+            width: 48%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+       .info-item label {
+            width: 120px;
+            font-weight: 500;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+       .info-item label i {
+            transition: transform 0.3s ease;
+        }
+
+       .info-item label:hover i {
+            transform: rotate(30deg);
+        }
+
+       .form-element {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+       .form-element:hover {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+            transform: scale(1.02);
+        }
+
+       .form-element:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+            transform: scale(1.03);
+        }
+
+       .photo-section {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            float: right;
+            margin-top: -200px;
+        }
+
+        #photo-preview {
+            max-width: 200px;
+            max-height: 220px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #photo-input {
+            padding: 4px 5px;
+            border: none;
+            border-radius: 8px;
+            background: #007BFF;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #photo-input:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+       .long-text.info-item {
+            width: 100%;
+        }
+
+       .basic-info-container {
+            width: 75%;
+        }
+
+        @media (max-width: 768px) {
+           .section:first-child {
+                flex-direction: column;
+            }
+
+           .basic-info-container {
+                width: 100%;
+            }
+
+           .photo-section {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-user"></i> 基本信息</div>
+            <div class="basic-info-container">
+                <div class="info-group">
+                    <div class="info-item">
+                        <label for="name"><i class="fa-solid fa-user"></i> 姓名</label>
+                        <input type="text" id="name" value="许源赫" class="form-element">
+                    </div>
+                    <div class="info-item">
+                        <label for="gender"><i class="fa-solid fa-venus-mars"></i> 性别</label>
+                        <select id="gender" class="form-element">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label for="age"><i class="fa-solid fa-calendar-days"></i> 年龄</label>
+                        <input type="number" id="age" value="20" class="form-element">
+                    </div>
+                    <div class="info-item">
+                        <label for="hometown"><i class="fa-solid fa-location-dot"></i> 籍贯</label>
+                        <input type="text" id="hometown" value="吉林省白城市" class="form-element">
+                    </div>
+                    <div class="info-item">
+                        <label for="phone"><i class="fa-solid fa-phone"></i> 联系电话</label>
+                        <input type="text" id="phone" value="13364363009" class="form-element">
+                    </div>
+                    <div class="info-item">
+                        <label for="email"><i class="fa-solid fa-envelope"></i> 电子邮箱</label>
+                        <input type="email" id="email" value="126****@qq.com" class="form-element">
+                    </div>
+                    <div class="info-item">
+                        <label for="education"><i class="fa-solid fa-graduation-cap"></i> 学历</label>
+                        <select id="education" class="form-element">
+                            <option value="本科">本科</option>
+                            <option value="专科">专科</option>
+                            <option value="硕士">硕士</option>
+                            <option value="博士">博士</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label for="health-status"><i class="fa-solid fa-heart-pulse"></i> 健康状况</label>
+                        <select id="health-status" class="form-element">
+                            <option value="正常">正常</option>
+                            <option value="良好">良好</option>
+                            <option value="一般">一般</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label for="marital-status"><i class="fa-solid fa-ring"></i> 婚姻状况</label>
+                        <select id="marital-status" class="form-element">
+                            <option value="未婚">未婚</option>
+                            <option value="已婚">已婚</option>
+                            <option value="离异">离异</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-section">
+                <img id="photo-preview" src="zhaopian.jpg" alt="个人照片">
+                <input type="file" id="photo-input" accept="image/*" onchange="previewPhoto(event)">
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-school"></i> 毕业院校</div>
+            <div class="info-group">
+                <div class="info-item">
+                    <label for="school"><i class="fa-solid fa-school"></i> 毕业院校</label>
+                    <input type="text" id="school" value="鲁东大学" class="form-element">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-code"></i> 专业</div>
+            <div class="info-group">
+                <div class="info-item">
+                    <label for="major"><i class="fa-solid fa-code"></i> 专业</label>
+                    <input type="text" id="major" value="软件工程" class="form-element">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-briefcase"></i> 求职意向</div>
+            <div class="info-group">
+                <div class="info-item long-text">
+                    <label></label>
+                    <input type="text" value="本人软件工程专业毕业，求职意向为软件开发工程师、后端开发工程师或系统架构师岗位，熟练掌握Java/Python等编程语言，熟悉主流开发框架与数据库技术，具备多个项目实战经验，擅长需求分析与代码优化，期望在互联网、金融科技等领域发挥专业技能，参与高并发、高性能系统开发，与团队共同实现技术创新与业务增长。 "
+                        class="form-element">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-certificate"></i> 技能证书</div>
+            <div class="info-group">
+                <div class="info-item">
+                    <label></label>
+                    <input type="text" value="计算机二级，英语四级" class="form-element">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-star"></i> 个人特长与爱好</div>
+            <div class="info-group">
+                <div class="info-item long-text">
+                    <label></label>
+                    <input type="text" value="我热衷探索前沿科技，常钻研人工智能、区块链等领域知识，通过技术论坛与同行交流心得。闲暇时沉浸于编程开源项目，享受代码构建世界的乐趣。热爱篮球运动，在球场上挥洒汗水，释放压力。也钟情阅读科幻小说，借想象力驰骋未来世界，激发创新思维。 "
+                        class="form-element">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-project-diagram"></i> 项目经历</div>
+            <div class="info-group">
+                <div class="info-item long-text">
+                    <label></label>
+                    <textarea rows="3" cols="50" class="form-element">无</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-user"></i> 自我评价</div>
+            <div class="info-group">
+                <div class="info-item long-text">
+                    <label></label>
+                    <textarea rows="10" cols="50" class="form-element">作为一名积极进取的大学生，在学业上，我始终以热忱与专注深耕专业领域。课堂内，我全神贯注，不放过老师讲解的任何细节，积极参与互动，思维紧跟教学节奏。课后，对待作业严谨认真，主动拓展学习。生活里，我深知健康的重要性，保持规律作息，早睡早起，为日常学习生活储备能量。每周坚持运动，或是在操场慢跑，或是在健身房锻炼，运动不仅让我拥有强健体魄，更让我时刻精力充沛，从容应对生活挑战。但我也清楚自身短板，在沟通表达方面存在提升空间。为此，我制定了详细计划，计划多参与演讲活动，从克服紧张开始，锻炼流畅表达观点的能力；积极投身小组讨论，在思维碰撞中学会清晰阐述想法，虚心汲取他人建议。此外，我主动加入实验室，在导师指导下与团队协作，参与科研项目。从基础数据收集到复杂实验分析，我都全力以赴，期望在实践中积累经验，全方位提升自己，不断向优秀靠近 。</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><i class="fa-solid fa-info"></i> 额外信息</div>
+            <div class="info-group">
+                <div class="info-item">
+                    <label for="extra-info"></label>
+                    <input type="text" id="extra-info" class="form-element" placeholder="请输入其他信息">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function previewPhoto(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('photo-preview');
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>
